@@ -25,7 +25,7 @@ node {
 	 if (isUnix()) {
 		sh '"$buildDockerImage"'
 	 } else {
-		bat(/"$buildDockerImage"/)
+		bat(/$buildDockerImage/)
 	 }
    }
 }
