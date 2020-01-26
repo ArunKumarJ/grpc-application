@@ -8,7 +8,7 @@ node {
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
       mvnHome = tool 'maven-3.5.4'
-	  javaHome = tool 'JDK-12'
+      javaHome = tool 'JDK-12'
    }
    stage('Build') {
       // Run the maven build
@@ -21,11 +21,11 @@ node {
       }
    }
    stage('Build Docker Image') {
-	 def buildDockerImage = "docker build -t arun/grpc-service:1.0.0 ."
-	 if (isUnix()) {
-		sh '"$buildDockerImage"'
-	 } else {
-		bat(/$buildDockerImage/)
-	 }
+     def buildDockerImage = "docker build -t arun/grpc-service:1.0.0 ."
+     if (isUnix()) {
+        sh '"$buildDockerImage"'
+     } else {
+        bat(/$buildDockerImage/)
+     }
    }
 }
