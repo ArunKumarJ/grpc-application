@@ -20,11 +20,12 @@ node {
          }
       }
    }
-   stage('Build Docker Image') {      
+   stage('Build Docker Image') {
+	 def buildDockerImage = 'docker build -t arun/grpc-service:1.0.0 .'
 	 if (isUnix()) {
-		sh 'docker build -t arun/grpc-service:1.0.0 .'
+		sh '"$buildDockerImage"'
 	 } else {
-		bat(/docker build -t arun/grpc-service:1.0.0 ./)
+		bat(/"%buildDockerImage%"/)
 	 }
    }
 }
