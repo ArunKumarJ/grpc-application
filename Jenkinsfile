@@ -21,7 +21,7 @@ node {
       }
    }
    stage('Build Docker Image') {
-     def buildDockerImage = "docker build -t grpc-service:1.0.0 ."
+     def buildDockerImage = "docker build -t arun/grpc-service:1.0.0 ."
      if (isUnix()) {
         sh '"$buildDockerImage"'
      } else {
